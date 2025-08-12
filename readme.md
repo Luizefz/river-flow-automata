@@ -1,7 +1,7 @@
 ## Simulador de Incêndio Florestal com Elevação e Umidade
 Este projeto é uma simulação baseada em autômatos celulares que modela a propagação de um incêndio florestal. Diferente de modelos simples, esta simulação incorpora fatores ambientais como a elevação do terreno e a umidade da vegetação para criar uma representação mais realista e dinâmica do comportamento do fogo.
 
-![run-simulation.gif]
+![Simulação do Incêndio](run-simulation.gif)
 
 ## Conceitos Principais
 A simulação é construída sobre os princípios de autômatos celulares, onde uma grade de células evolui ao longo do tempo com base em um conjunto de regras simples. Cada célula em nossa grade representa um pedaço de terra e possui três características principais:
@@ -38,6 +38,17 @@ O projeto é uma aplicação de um autômato celular 2D e layers que trazem cons
 
 **3. Diferença de Elevação:**
 
-**3.1. Propagação Morro Acima**: Se a árvore está em uma elevação maior que o fogo (elevacao_arvore > elevacao_fogo), a probabilidade é significativamente aumentada (* MULTIPLICADOR_SUBIDA). Isso simula como o calor sobe e pré-aquece o combustível acima.
+**3.1. Propagação Morro Acima**: Se a árvore está em uma elevação maior que o fogo `(elevacao_arvore > elevacao_fogo)`, a probabilidade é significativamente aumentada `(* MULTIPLICADOR_SUBIDA)`. Isso simula como o calor sobe e pré-aquece o combustível acima.
 
-**3.2. Propagação Morro Abaixo:** Se a árvore está em uma elevação menor, a probabilidade é ligeiramente diminuída (* MULTIPLICADOR_DESCIDA), pois a propagação é menos eficiente.
+**3.2. Propagação Morro Abaixo:** Se a árvore está em uma elevação menor, a probabilidade é ligeiramente diminuída `(* MULTIPLICADOR_DESCIDA)`, pois a propagação é menos eficiente.
+
+## Controles
+Interaja com a simulação usando os seguintes controles de teclado e mouse:
+
+**1. Clique do Mouse (Botão Esquerdo):** Inicia um incêndio em uma célula de ÁRVORE. Clique em qualquer célula verde para incendiá-la.
+
+**2. Barra de Espaço:** Alterna a simulação entre Executar e Pausar. A simulação começa pausada.
+
+**3. Tecla R:** Reinicia a simulação, gerando uma nova floresta, terreno e mapa de umidade aleatórios.
+
+**4. Tecla ESC:** Sai da simulação.
