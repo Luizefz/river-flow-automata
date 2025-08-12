@@ -34,7 +34,7 @@ O projeto é uma aplicação de um autômato celular 2D e layers que trazem cons
 **2. Se uma célula é uma ÁRVORE:** Ela verifica seus quatro vizinhos. Se algum vizinho estiver QUEIMANDO, a árvore tem uma chance de pegar fogo. 
 > Essa chance não é fixa; é calculada dinamicamente com base em:
 
-    Umidade: A umidade interna da árvore (1 - umidade) reduz a probabilidade base de ignição. Uma árvore mais úmida tem menos probabilidade de queimar.
+> Umidade: A umidade interna da árvore (1 - umidade) reduz a probabilidade base de ignição. Uma árvore mais úmida tem menos probabilidade de queimar.
 
 **3. Diferença de Elevação:**
 
