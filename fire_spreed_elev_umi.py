@@ -27,7 +27,7 @@ MAX_ELEVATION = 100
 UPHILL_MULTIPLIER = 1.6
 DOWNHILL_MULTIPLIER = 1.0
 TREE_DENSITY = 0.80
-IGNITION_PROB = 0.7
+IGNITION_PROB = 0.72
 
 # CELL Status colors
 COLOR_GROUND = (160, 82, 45)
@@ -56,6 +56,7 @@ def draw_grid(surface, grid):
 
             cell_state = grid[y, x, CELL_STATUS_LAYER]
             cell_elevation = grid[y, x, CELL_ELEVATION_LAYER]
+            cell_moisture = grid[y, x, CELL_MOISTURE_LAYER]
             base_color = COLOR_GROUND
 
             if cell_state == TREE:
@@ -67,7 +68,7 @@ def draw_grid(surface, grid):
             elif cell_state == BURNED:
                 base_color = COLOR_BURNED
 
-            brightness_factor = 0.7 + (cell_elevation / MAX_ELEVATION) * 0.6
+            brightness_factor = 0.7 + ((cell_elevation / MAX_ELEVATION * 0.6) + (cell_moisture / 0.4 * 0.4))
             final_color = (
                 min(255, int(base_color[0] * brightness_factor)),
                 min(255, int(base_color[1] * brightness_factor)),
